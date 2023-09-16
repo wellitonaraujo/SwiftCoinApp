@@ -12,7 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text(viewModel.price)
+            if let errorMessage = viewModel.errorMessage {
+                Text(errorMessage)
+            } else {
+                Text(viewModel.price)
+            }
         }
     }
 }
